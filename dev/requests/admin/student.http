@@ -1,0 +1,58 @@
+### Request 1 -> criar um estudante
+POST http://localhost:3000/admin/student HTTP/1.1
+content-type: application/json
+
+{
+    "name": "John",
+    "email": "johndoe@mail.com",
+    "cpf": "12345678900",
+    "shift": "MORNING",
+    "enrollment": "12345678901234567",
+    "birth": "1990-01-01",
+    "fingerprint": "1234567890"
+}
+
+### Request 1.2 -> criar um estudante
+POST http://localhost:3000/admin/student HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Ana Doe",
+    "email": "anadoe@mail.com",
+    "cpf": "12345678800",
+    "shift": "MORNING",
+    "enrollment": "12345678901234467",
+    "birth": "2000-01-01",
+    "fingerprint": "1234567870"
+}
+
+### Request 1.3 -> criar um estudante
+POST http://localhost:3000/admin/student HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Cloe Doe",
+    "email": "cloedoe@mail.com",
+    "cpf": "98765432101",
+    "shift": "EVENING",
+    "enrollment": "09876543210987654",
+    "birth": "2010-01-01",
+    "fingerprint": "9871236541"
+}
+
+### Request 2 -> listar um estudante
+GET  http://localhost:3000/admin/student/1 HTTP/1.1
+
+### Request 3 -> listar estudantes
+GET  http://localhost:3000/admin/student HTTP/1.1
+
+### Request 4 -> atualizar um estudante
+PUT  http://localhost:3000/admin/student/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "John Doe"
+}
+
+### Request 5 -> deletar um estudante
+DELETE  http://localhost:3000/admin/student/3 HTTP/1.1

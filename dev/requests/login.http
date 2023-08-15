@@ -1,0 +1,35 @@
+### Request 1 -> Logar como admin
+POST http://localhost:3000/login/admin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@mail.com",
+    "password": "12345678"
+}
+
+### Request 2 -> Logar como responsible
+POST http://localhost:3000/login/responsible HTTP/1.1
+content-type: application/json
+
+{
+    "email": "mollydoe@mail.com",
+    "password": "12345678"
+}
+
+### Request 2.2 -> Logar como responsible
+POST http://localhost:3000/login/responsible HTTP/1.1
+content-type: application/json
+
+{
+    "email": "bobdoe@mail.com",
+    "password": "12345678"
+}
+
+### Request 3 -> Email ou senha incorretos
+POST http://localhost:3000/login/admin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "johndoe@mail.com",
+    "password": "123456"
+}

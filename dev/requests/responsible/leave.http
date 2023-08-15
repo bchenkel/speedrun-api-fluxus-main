@@ -1,0 +1,53 @@
+### Request 1 -> criar um leave
+POST http://localhost:3000/responsible/leave HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+content-type: application/json
+
+{
+    "beginning": "2021-01-01",
+    "end": "2024-01-01",
+    "reason": "Férias",
+    "studentId": 1,
+}
+
+### Request 2 -> listar um leave
+GET  http://localhost:3000/responsible/leave/3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+
+### Request 3 -> listar leaves
+GET  http://localhost:3000/responsible/leave HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+
+### Request 4 -> atualizar um leave
+PUT  http://localhost:3000/responsible/leave/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+content-type: application/json
+
+{
+    "reason": "Dentista"
+}
+
+### Request 5 -> deletar um leave
+DELETE  http://localhost:3000/responsible/leave/2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+
+
+### Request 1 -> criar um leave (MOLLY)
+POST http://localhost:3000/responsible/leave HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjIsImVtYWlsIjoibW9sbHlkb2VAbWFpbC5jb20iLCJpYXQiOjE2OTExODMyNDMsImV4cCI6MTY5MTI2OTY0M30.1DpO6qBryTvu9_zczws7ZYUaHr_NHqif3my9MuThBtA
+content-type: application/json
+
+{
+    "beginning": "2021-01-01",
+    "end": "2024-01-01",
+    "reason": "Eu quero",
+    "studentId": 3
+}
+
+### Request 3 -> listar leaves
+GET  http://localhost:3000/responsible/leave HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjIsImVtYWlsIjoibW9sbHlkb2VAbWFpbC5jb20iLCJpYXQiOjE2OTExODMyNDMsImV4cCI6MTY5MTI2OTY0M30.1DpO6qBryTvu9_zczws7ZYUaHr_NHqif3my9MuThBtA
+
+### Request 5 -> deletar um leave
+DELETE  http://localhost:3000/responsible/leave/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjIsImVtYWlsIjoibW9sbHlkb2VAbWFpbC5jb20iLCJpYXQiOjE2OTExODMyNDMsImV4cCI6MTY5MTI2OTY0M30.1DpO6qBryTvu9_zczws7ZYUaHr_NHqif3my9MuThBtA

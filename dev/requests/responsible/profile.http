@@ -1,0 +1,7 @@
+### Request 1 -> Receber dados do perfil do resposável (Bob)
+GET http://localhost:3000/responsible/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjEsImVtYWlsIjoiYm9iZG9lQG1haWwuY29tIiwiaWF0IjoxNjkxMTU5NzA2LCJleHAiOjE2OTEyNDYxMDZ9.hoCPIXghjgUoxCSPehA5yJ5pAV6hQuHlJVnLRCURx4M
+
+### Request 2 -> Receber dados do perfil do resposável (Molly)
+GET http://localhost:3000/responsible/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicmVzcG9uc2libGUiLCJzdWIiOjIsImVtYWlsIjoibW9sbHlkb2VAbWFpbC5jb20iLCJpYXQiOjE2OTExNzE5MzksImV4cCI6MTY5MTI1ODMzOX0.KzWUh5ns_8kX--W_ydEoQFGIrH7y9tCM0iyZu70Gyig

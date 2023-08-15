@@ -1,0 +1,40 @@
+### Request 1 -> criar um leave
+POST http://localhost:3000/admin/leave HTTP/1.1
+content-type: application/json
+
+{
+    "beginning": "2021-01-01",
+    "end": "2024-01-01",
+    "reason": "Férias",
+    "studentId": 1,
+    "responsibleId": 1
+}
+
+### Request 1.2 -> criar um leave
+POST http://localhost:3000/admin/leave HTTP/1.1
+content-type: application/json
+
+{
+    "beginning": "2021-01-01",
+    "end": "2024-01-01",
+    "reason": "Dentista",
+    "studentId": 2,
+    "responsibleId": 1
+}
+
+### Request 2 -> listar um leave
+GET  http://localhost:3000/admin/leave/1 HTTP/1.1
+
+### Request 3 -> listar leaves
+GET  http://localhost:3000/admin/leave HTTP/1.1
+
+### Request 4 -> atualizar um leave
+PUT  http://localhost:3000/admin/leave/2 HTTP/1.1
+content-type: application/json
+
+{
+    "reason": "Problemas de saúde"
+}
+
+### Request 5 -> deletar um leave
+DELETE  http://localhost:3000/admin/leave/2 HTTP/1.1

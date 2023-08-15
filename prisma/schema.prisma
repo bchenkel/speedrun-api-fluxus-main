@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id          Int                  @id @default(autoincrement())
+  name        String
+  email       String               @unique
+  cpf         String               @unique @db.Char(11)
+  enrollment  String               @unique @db.VarChar(17)
+  birth       DateTime
+  shift       ShiftType
+  fingerprint String               @unique
+  log         Log[]
+  Responsible StudentResponsible[]
+  leave       Leave[]
+  createdAt   DateTime             @default(now())
+}
+
+model Responsible {
+  id             Int                  @id @default(autoincrement())
+  active         Boolean              @default(false)
+  name           String
+  email          String               @unique
+  password       String               @default(cuid())
+  cpf            String               @unique @db.Char(11)
+  token          String?
+  validTokenTime DateTime?
+  createdAt      DateTime             @default(now())
+  Student        StudentResponsible[]
+  leave          Leave[]
+}
+
+model StudentResponsible {
+  Student       Student     @relation(fields: [studentId], references: [id])
+  studentId     Int
+  Responsible   Responsible @relation(fields: [responsibleId], references: [id])
+  responsibleId Int
+
+  @@id([studentId, responsibleId])
+}
+
+model Leave {
+  id            Int          @id @default(autoincrement())
+  beginning     DateTime
+  end           DateTime
+  reason        String
+  createdAt     DateTime     @default(now())
+  Student       Student?     @relation(fields: [studentId], references: [id])
+  studentId     Int
+  Responsible   Responsible? @relation(fields: [responsibleId], references: [id])
+  responsibleId Int
+}
+
+model Log {
+  id        Int      @id @default(autoincrement())
+  type      LogType
+  createdAt DateTime @default(now())
+  Student   Student  @relation(fields: [studentId], references: [id])
+  studentId Int
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+}
+
+enum ShiftType {
+  MORNING
+  AFTERNOON
+  EVENING
+}
+
+enum LogType {
+  IN
+  OUT
+}

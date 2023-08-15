@@ -1,0 +1,43 @@
+### Request 1 -> criar um log
+POST http://localhost:3000/admin/log HTTP/1.1
+content-type: application/json
+
+{
+    "type": "IN",
+    "studentId": 1
+}
+
+### Request 1.2 -> criar um log
+POST http://localhost:3000/admin/log HTTP/1.1
+content-type: application/json
+
+{
+    "type": "OUT",
+    "studentId": 1
+}
+
+### Request 1.3 -> criar um log
+POST http://localhost:3000/admin/log HTTP/1.1
+content-type: application/json
+
+{
+    "type": "OUT",
+    "studentId": 2
+}
+
+### Request 2 -> listar um log
+GET  http://localhost:3000/admin/log/1 HTTP/1.1
+
+### Request 3 -> listar logs
+GET  http://localhost:3000/admin/log HTTP/1.1
+
+### Request 4 -> atualizar um log
+PUT  http://localhost:3000/admin/log/2 HTTP/1.1
+content-type: application/json
+
+{
+    "type": "IN"
+}
+
+### Request 5 -> deletar um log
+DELETE  http://localhost:3000/admin/log/2 HTTP/1.1

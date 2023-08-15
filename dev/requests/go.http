@@ -1,0 +1,8 @@
+### Request 1 -> Criar log para o aluno John Doe
+GET http://localhost:3000/go/1234567890 HTTP/1.1
+
+### Request 2 -> Criar log para o aluno Cloe Doe
+GET http://localhost:3000/go/9871236541 HTTP/1.1
+
+### Request 3 -> Retornar falso (pois não encontrou um aluno com o fingerprint 9999999999)
+GET http://localhost:3000/go/9999999999 HTTP/1.1

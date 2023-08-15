@@ -1,0 +1,53 @@
+### Request 1 -> criar uma ligação entre um estudante e um responsável
+POST http://localhost:3000/admin/student-responsible HTTP/1.1
+content-type: application/json
+
+{
+    "studentId": 1,
+    "responsibleId": 1
+}
+
+### Request 1.2 -> criar uma ligação entre um estudante e um responsável
+POST http://localhost:3000/admin/student-responsible HTTP/1.1
+content-type: application/json
+
+{
+    "studentId": 2,
+    "responsibleId": 1
+}
+
+### Request 1.3 -> criar uma ligação entre um estudante e um responsável
+POST http://localhost:3000/admin/student-responsible HTTP/1.1
+content-type: application/json
+
+{
+    "studentId": 3,
+    "responsibleId": 2
+}
+
+### Request 1.4 -> criar uma ligação entre um estudante e um responsável
+POST http://localhost:3000/admin/student-responsible HTTP/1.1
+content-type: application/json
+
+{
+    "studentId": 1,
+    "responsibleId": 2
+}
+
+### Request 2 -> Listar relação entre o estudante de id x e o responsável de id x
+GET http://localhost:3000/admin/student-responsible?studentId=1 HTTP/1.1
+
+### Request 3 -> Listar todas as relações
+GET http://localhost:3000/admin/student-responsible HTTP/1.1
+
+### Request 4 -> Alterar a relação entre o estudante de id x e o responsável de id x
+PUT http://localhost:3000/admin/student-responsible?studentId=1&responsibleId=2 HTTP/1.1
+content-type: application/json
+
+{
+    "studentId": 2,
+    "responsibleId": 2
+}
+
+### Request 5 -> Excluir a relação entre o estudante de id x e o responsável de id x
+DELETE http://localhost:3000/admin/student-responsible?studentId=2&responsibleId=2 HTTP/1.1

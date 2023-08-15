@@ -1,0 +1,47 @@
+### Request 1.1 -> criar um responsável
+POST http://localhost:3000/admin/responsible HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bob",
+    "email": "bobdoe@mail.com",
+    "cpf": "12345678911"
+}
+
+### Request 1.2 -> criar um responsável
+POST http://localhost:3000/admin/responsible HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Molly Doe",
+    "email": "mollydoe@mail.com",
+    "cpf": "12345678922"
+}
+
+### Request 2 -> listar um responsável
+GET  http://localhost:3000/admin/responsible/2 HTTP/1.1
+
+### Request 3 -> listar responsáveis
+GET  http://localhost:3000/admin/responsible HTTP/1.1
+
+### Request 4.1 -> atualizar um responsável
+PUT  http://localhost:3000/admin/responsible/1 HTTP/1.1
+content-type: application/json
+
+{
+    "active": true,
+    "name": "Bob Doe",
+    "password": "12345678"
+}
+
+### Request 4.2 -> atualizar um responsável
+PUT  http://localhost:3000/admin/responsible/2 HTTP/1.1
+content-type: application/json
+
+{
+    "active": true,
+    "password": "12345678"
+}
+
+### Request 5 -> deletar um responsável
+DELETE  http://localhost:3000/admin/responsible/3 HTTP/1.1
